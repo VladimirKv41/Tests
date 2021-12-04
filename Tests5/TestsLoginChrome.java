@@ -29,19 +29,19 @@ public class TestsLoginChrome {
     public void login_true() {
     	login_page.input_email("vladimirkovalev19076@gmail.com");
     	login_page.click_confirm_button();
-        Assert.assertEquals(password_page.get_head_text(), "Äîáðî ïîæàëîâàòü!"); 
+        Assert.assertEquals(password_page.get_head_text(), "Добро пожаловать!"); 
     }
     @Test
     public void login_null() {
     	login_page.input_email("");
     	login_page.click_confirm_button();
-        Assert.assertEquals(login_page.get_email_error(), "Ââåäèòå àäðåñ ýëåêòðîííîé ïî÷òû èëè íîìåð òåëåôîíà."); 
+        Assert.assertEquals(login_page.get_email_error(), "Введите адрес электронной почты или номер телефона."); 
     }
     @Test
     public void login_wrong() {
     	login_page.input_email("@");
     	login_page.click_confirm_button();
-        Assert.assertEquals(login_page.get_email_error(), "Ââåäèòå àäðåñ ýëåêòðîííîé ïî÷òû èëè íîìåð òåëåôîíà."); 
+        Assert.assertEquals(login_page.get_email_error(), "Введите адрес электронной почты или номер телефона."); 
     }
     @Test
     public void login_random() {
@@ -56,7 +56,7 @@ public class TestsLoginChrome {
     	if(bool_temp)
     		Assert.assertTrue(bool_temp);
     	else 
-    		Assert.assertEquals(login_page.get_email_error(), "Íå óäàëîñü íàéòè àêêàóíò Google.");
+    		Assert.assertEquals(login_page.get_email_error(), "Не удалось найти аккаунт Google.");
     }
     @Test
     public void password_true() {
@@ -85,7 +85,7 @@ public class TestsLoginChrome {
 			bool = false;
 		}
         Assert.assertEquals(false, bool); 
-        Assert.assertEquals(password_page.get_password_error(), "Ââåäèòå ïàðîëü");
+        Assert.assertEquals(password_page.get_password_error(), "Введите пароль");
     }
     @Test
     public void password_wrong() {
@@ -100,7 +100,7 @@ public class TestsLoginChrome {
 			bool = false;
 		}
         Assert.assertEquals(false, bool); 
-        Assert.assertEquals(password_page.get_password_error(), "Íåâåðíûé ïàðîëü. Ïîâòîðèòå ïîïûòêó èëè íàæìèòå íà ññûëêó \"Çàáûëè ïàðîëü?\", ÷òîáû ñáðîñèòü åãî.");
+        Assert.assertEquals(password_page.get_password_error(), "Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.");
     }
     @After
     public void tearDown_login() {
