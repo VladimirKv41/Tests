@@ -64,7 +64,7 @@ public class TestsChrome {
     	main_page.input_search("((($!$)!$#$");
     	main_page.click_confirm_button();
     	main_page.clear_search();
-        Assert.assertEquals(noresults_page.get_search_error(), "Результатов не найдено");
+        Assert.assertEquals(noresults_page.get_search_error(), "Р РµР·СѓР»СЊС‚Р°С‚РѕРІ РЅРµ РЅР°Р№РґРµРЅРѕ");
     }
     @AfterClass
     public static void tearDown() {
