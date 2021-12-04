@@ -32,7 +32,7 @@ public class TestsRegistChrome {
         regist_page = new RegistrationPage(driver);
         regist_confirm_page = new RegistrationConfirmPage(driver);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(
-        		By.xpath("//*[contains(.,'Создать вместо этого адрес электронной почты в Gmail')]"))).click();
+        		By.xpath("//*[contains(.,'РЎРѕР·РґР°С‚СЊ РІРјРµСЃС‚Рѕ СЌС‚РѕРіРѕ Р°РґСЂРµСЃ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РїРѕС‡С‚С‹ РІ Gmail')]"))).click();
         driver.manage().window().maximize();
      } 
 	@Test
@@ -43,7 +43,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_confirm_page.getText(), "Подтвердите номер телефона");
+        Assert.assertEquals(regist_confirm_page.getText(), "РџРѕРґС‚РІРµСЂРґРёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°");
         driver.get("https://accounts.google.com/signup/v2/webcreateaccount?service="
         		+ "youtube&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3"
         		+ "Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dru%26next%3Dhttps%253A%252F%252F"
@@ -58,9 +58,9 @@ public class TestsRegistChrome {
 		regist_page.input_password("");
 		regist_page.input_confirm_password("");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_name_error(), "Введите имя и фамилию");
-        Assert.assertEquals(regist_page.get_username_error(), "Укажите адрес Gmail");
-        Assert.assertEquals(regist_page.get_password_error(), "Введите пароль");
+        Assert.assertEquals(regist_page.get_name_error(), "Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ");
+        Assert.assertEquals(regist_page.get_username_error(), "РЈРєР°Р¶РёС‚Рµ Р°РґСЂРµСЃ Gmail");
+        Assert.assertEquals(regist_page.get_password_error(), "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ");
         regist_page.clear_forms();
     }
 	@Test
@@ -72,7 +72,7 @@ public class TestsRegistChrome {
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
         Assert.assertEquals(regist_page.get_username_error(), 
-        		"Имя пользователя может включать латинские буквы (a-z), цифры (0-9) и точку (.).");
+        		"РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РјРѕР¶РµС‚ РІРєР»СЋС‡Р°С‚СЊ Р»Р°С‚РёРЅСЃРєРёРµ Р±СѓРєРІС‹ (a-z), С†РёС„СЂС‹ (0-9) Рё С‚РѕС‡РєСѓ (.).");
         regist_page.clear_forms();
     }
 	@Test
@@ -83,7 +83,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("124###");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_password_error(), "Пароль не может быть короче 8 символов");
+        Assert.assertEquals(regist_page.get_password_error(), "РџР°СЂРѕР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РєРѕСЂРѕС‡Рµ 8 СЃРёРјРІРѕР»РѕРІ");
         regist_page.clear_forms();
     }
 	@Test
@@ -94,7 +94,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("124###");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_password_error(), "Пароли не совпадают. Повторите попытку.");
+        Assert.assertEquals(regist_page.get_password_error(), "РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚. РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ.");
         regist_page.clear_forms();
     }
 	@Test
@@ -105,7 +105,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_name_error(), "Укажите имя");
+        Assert.assertEquals(regist_page.get_name_error(), "РЈРєР°Р¶РёС‚Рµ РёРјСЏ");
         regist_page.clear_forms();
     }
 	@Test
@@ -116,7 +116,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_name_error(), "Укажите фамилию");
+        Assert.assertEquals(regist_page.get_name_error(), "РЈРєР°Р¶РёС‚Рµ С„Р°РјРёР»РёСЋ");
         regist_page.clear_forms();
     }
 	@Test
@@ -127,7 +127,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_username_error(), "Укажите адрес Gmail");
+        Assert.assertEquals(regist_page.get_username_error(), "РЈРєР°Р¶РёС‚Рµ Р°РґСЂРµСЃ Gmail");
         regist_page.clear_forms();
     }
 	@Test
@@ -138,7 +138,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("");
 		regist_page.input_confirm_password("test_190766");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_password_error(), "Введите пароль");
+        Assert.assertEquals(regist_page.get_password_error(), "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ");
         regist_page.clear_forms();
     }
 	@Test
@@ -149,7 +149,7 @@ public class TestsRegistChrome {
 		regist_page.input_password("test_190766");
 		regist_page.input_confirm_password("");
         regist_page.click_confirm_button();
-        Assert.assertEquals(regist_page.get_password_error(), "Подтвердите пароль");
+        Assert.assertEquals(regist_page.get_password_error(), "РџРѕРґС‚РІРµСЂРґРёС‚Рµ РїР°СЂРѕР»СЊ");
         regist_page.clear_forms();
     }
     @AfterClass
