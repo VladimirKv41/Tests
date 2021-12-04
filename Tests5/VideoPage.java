@@ -18,7 +18,7 @@ public class VideoPage {
     @FindBy(id = "guide-button")
     private WebElement guide_button;
     
-    @FindBy(xpath = "//*[@title='Понравившиеся']")
+    @FindBy(xpath = "//*[@title='РџРѕРЅСЂР°РІРёРІС€РёРµСЃСЏ']")
     private WebElement button_like_list;
     
     public void click_like_button(){
